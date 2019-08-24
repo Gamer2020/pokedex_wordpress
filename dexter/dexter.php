@@ -12,4 +12,34 @@
 ?>
 <?php
 
+    use PokeAPI\Client;
+
+    require 'dex-settings.php';
+
+    /** Hooks go here*/
+    /** Hook for options page.*/
+    add_action( 'admin_menu', 'dex_plugin_menu' );
+	add_action( 'admin_init', 'dex_options_init' );
+    
+    /** Link for options page.*/
+	function dex_plugin_menu() {
+		add_options_page( 'Dexter Settings', 'Dexter', 'administrator', 'dexter-settings', 'dex_plugin_options' );
+	}
+
+	function dex_options_init(){
+		register_setting('dex_options_group','dex_pokepage_options','dex_options_validate');
+		register_setting('dex_options_group','dex_searchpage_options','dex_options_validate');
+	}
+
+	function dex_options_validate($input) {
+		// do some validation here if necessary
+		//return sanitize_text_field($input);
+		return $input;
+    }
+    
+	function dex_options_text_validate($input) {
+		// do some validation here if necessary
+		return sanitize_text_field($input);
+	}
+
 ?>
