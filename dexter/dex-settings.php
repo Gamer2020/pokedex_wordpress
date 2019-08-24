@@ -7,8 +7,8 @@
 		echo '<div class="wrap">';
 		echo '<form method="post" action="options.php">';
 		settings_fields( 'dex_options_group' );
-		$es_cardpage_options = get_option( 'dex_pokepage_options' );
-		$es_searchpage_options = get_option( 'dex_searchpage_options' );
+		$dex_pokepage_options = get_option( 'dex_pokepage_options' );
+		$dex_searchpage_options = get_option( 'dex_searchpage_options' );
 		
 		echo '<h2>Selected Pages</h2>';
 		
@@ -37,7 +37,19 @@
 		echo '</select>';
 		echo '</td>';
 		echo '</tr>';
-		
+        
+        echo '<tr valign="top"><th scope="row">Pokedex Count:</th>';
+		echo '<td>';
+		echo '<input type="text" name="dex_pokedexcount_options" value="' . sanitize_text_field(get_option('dex_pokedexcount_options')) . '">';
+		echo '</td>';
+        echo '</tr>';
+        
+        echo '<tr valign="top"><th scope="row">Page Limit:</th>';
+		echo '<td>';
+		echo '<input type="text" name="dex_pagelimit_options" value="' . sanitize_text_field(get_option('dex_pagelimit_options')) . '">';
+		echo '</td>';
+		echo '</tr>';
+
 		echo '</table>';
 		echo '<p class="submit">';
 		echo '<input type="submit" class="button-primary" value="Save Changes" />';
