@@ -1,0 +1,5 @@
+{
+    "require": {
+        "lmerotta/phpokeapi": "^1.1"
+    }
+}
