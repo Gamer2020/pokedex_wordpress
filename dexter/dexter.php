@@ -13,13 +13,20 @@
 <?php
 
     use PokeAPI\Client;
+    require __DIR__ . '/vendor/autoload.php';
 
     require 'dex-settings.php';
+    require 'dex-pokemon.php';
 
     /** Hooks go here*/
     /** Hook for options page.*/
     add_action( 'admin_menu', 'dex_plugin_menu' );
-	add_action( 'admin_init', 'dex_options_init' );
+    add_action( 'admin_init', 'dex_options_init' );
+    
+    /** Other hooks */
+
+ 	/** Shortcodes!*/
+    add_shortcode('dex_poke_page', 'dex_poke_page');
     
     /** Link for options page.*/
 	function dex_plugin_menu() {
