@@ -32,31 +32,30 @@
 
         $client = new Client();
 
-        //echo '<table><tr>'; 
-
         for ($x = $pagestart; $x <= $pageend; $x++) {
 
         if ($x < ($dex_pokedexcount_options + 1)) {
 
             $species = $client->species($x);
 
-            //echo $species->getName();
             echo "<a href='" . get_permalink($dex_pokepage_options['page_id']) . "?ID=" . $x . "'>" . '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' . $x. '.png">' . '</a>';
         
         }
 
         }
 
-        //echo '</table></tr>'; 
-
 
         echo "<br>";
+
+        echo "<div style='text-align: center'>";
 
         if ($pagenum != 1) {
             echo "<a href='?&PAGE=" . ($pagenum - 1) . "'>Previous Page</a> | ";
         }
 
         echo "<a href='?&PAGE=" . ($pagenum + 1) . "'>Next Page</a>";
+
+        echo "</div>";
 		
 	}
 ?>
