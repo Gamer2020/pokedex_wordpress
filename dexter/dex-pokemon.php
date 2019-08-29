@@ -20,11 +20,21 @@
 				echo '<th style="font-size: 1.5em; line-height: 1.5em; color:: #000000;" colspan="3">' .  ucfirst($species->getName());
                 echo '</th></tr>';
                 
-                //Image
-				echo '<tr>';
-				echo '<td rowspan="90"><a href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' . sanitize_text_field($_GET['ID']) . '.png">' . '<img width="250" height="350" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' . sanitize_text_field($_GET['ID']) . '.png" alt=' . '"' . ucfirst($species->getName()) . '"' . ">" . "</a>";
-                echo '</td></tr>';
-                
+                //Images
+                echo '<tr>';
+                echo '<td rowspan="90">';
+                //Front Sprite
+				echo '<a href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' . sanitize_text_field($_GET['ID']) . '.png">' . '<img width="250" height="350" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' . sanitize_text_field($_GET['ID']) . '.png" alt=' . '"' . ucfirst($species->getName()) . '"' . ">" . "</a>";
+                //Back Sprite
+                echo '<a href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/' . sanitize_text_field($_GET['ID']) . '.png">' . '<img width="250" height="350" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/' . sanitize_text_field($_GET['ID']) . '.png" alt=' . '"' . ucfirst($species->getName()) . '"' . ">" . "</a>";
+                echo '<br>';
+                //Shiny Front Sprite
+                echo '<a href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/' . sanitize_text_field($_GET['ID']) . '.png">' . '<img width="250" height="350" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/' . sanitize_text_field($_GET['ID']) . '.png" alt=' . '"' . ucfirst($species->getName()) . '"' . ">" . "</a>";
+                //Shiny Back Sprite
+                echo '<a href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/' . sanitize_text_field($_GET['ID']) . '.png">' . '<img width="250" height="350" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/' . sanitize_text_field($_GET['ID']) . '.png" alt=' . '"' . ucfirst($species->getName()) . '"' . ">" . "</a>";
+                echo '</td>';
+                echo '</tr>';
+
                 //Types
 
                 $Types = $pokemon->getTypes()->toArray();
@@ -38,12 +48,12 @@
                 if (count($Types) > 1)
                 {
                     $Type2 = $Types[1]->getType();
-                    $Type2Name = "/" . ucfirst($Type2->getName());
+                    $Type2Name = ucfirst($Type2->getName()) . "/";
                 }
 
 				echo '<tr>';
 				echo '<td> <b>Types:</b>';
-				echo '</td><td>' . $Type1Name . $Type2Name;
+				echo '</td><td>' . $Type2Name . $Type1Name;
 				echo '</td></tr>';
 
                 //Capture Rate
@@ -53,8 +63,6 @@
 				echo '</td></tr>';
 
                 echo '</tbody></table>';
-
-                //echo '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' . sanitize_text_field($_GET['ID']) . '.png">';
 				
                 //catch exception
 			}catch(Exception $e) {
