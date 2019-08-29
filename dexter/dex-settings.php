@@ -8,7 +8,7 @@
 		echo '<form method="post" action="options.php">';
 		settings_fields( 'dex_options_group' );
 		$dex_pokepage_options = get_option( 'dex_pokepage_options' );
-		$dex_searchpage_options = get_option( 'dex_searchpage_options' );
+		$dex_pokedex_options = get_option( 'dex_pokedex_options' );
 		
 		echo '<h2>Selected Pages</h2>';
 		
@@ -26,12 +26,12 @@
 		echo '</td>';
 		echo '</tr>';
 		
-		echo '<tr valign="top"><th scope="row">Search page:</th>';
+		echo '<tr valign="top"><th scope="row">Pokedex page:</th>';
 		echo '<td>';
-		echo '<select name="dex_searchpage_options[page_id]">';
+		echo '<select name="dex_pokedex_options[page_id]">';
 		if( $pages = get_pages() ){
 			foreach( $pages as $page ){
-				echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $dex_searchpage_options['page_id'] ) . '>' . $page->post_title . '</option>';
+				echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $dex_pokedex_options['page_id'] ) . '>' . $page->post_title . '</option>';
 			}
 		}
 		echo '</select>';

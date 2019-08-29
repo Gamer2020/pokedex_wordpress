@@ -40,7 +40,7 @@
 
 	function dex_options_init(){
 		register_setting('dex_options_group','dex_pokepage_options','dex_options_validate');
-        register_setting('dex_options_group','dex_searchpage_options','dex_options_validate');
+        register_setting('dex_options_group','dex_pokedex_options','dex_options_validate');
         register_setting('dex_options_group','dex_pokedexcount_options','dex_options_validate');
         register_setting('dex_options_group','dex_pagelimit_options','dex_options_validate');
 	}
@@ -84,7 +84,7 @@
 	
 	function dex_handle_post_title($title) {
 		$dex_pokepage_options = get_option( 'dex_pokepage_options' );
-		$dex_searchpage_options = get_option( 'dex_searchpage_options' );
+		$dex_pokedex_options = get_option( 'dex_pokedex_options' );
 		
 		$newtittle = "";
 		
@@ -93,7 +93,7 @@
 			$newtittle =  "";
 
 		}
-		elseif (is_page() && in_the_loop() && (get_the_ID() == $dex_searchpage_options['page_id'])){
+		elseif (is_page() && in_the_loop() && (get_the_ID() == $dex_pokedex_options['page_id'])){
 			
 			$newtittle =  "";
 			
