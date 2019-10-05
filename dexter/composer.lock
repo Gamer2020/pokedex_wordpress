@@ -892,16 +892,16 @@
         },
         {
             "name": "lmerotta/phpokeapi",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lmerotta/phpokeapi.git",
-                "reference": "5f6cc49daa37a51ec19d7ef5ea2c96f9de93a2a0"
+                "reference": "1ecdd3d015a945999c79736104b08aefc2e8ca48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lmerotta/phpokeapi/zipball/5f6cc49daa37a51ec19d7ef5ea2c96f9de93a2a0",
-                "reference": "5f6cc49daa37a51ec19d7ef5ea2c96f9de93a2a0",
+                "url": "https://api.github.com/repos/lmerotta/phpokeapi/zipball/1ecdd3d015a945999c79736104b08aefc2e8ca48",
+                "reference": "1ecdd3d015a945999c79736104b08aefc2e8ca48",
                 "shasum": ""
             },
             "require": {
@@ -935,7 +935,7 @@
                 }
             ],
             "description": "A PHP7.1 Wrapper for PokéAPI, with cache and lazy-loading",
-            "time": "2019-06-21T14:08:32+00:00"
+            "time": "2019-09-27T06:37:04+00:00"
         },
         {
             "name": "ocramius/package-versions",

@@ -27,7 +27,7 @@ final class Versions
   'jms/metadata' => '1.7.0@e5854ab1aa643623dc64adde718a8eec32b957a8',
   'jms/parser-lib' => '1.0.0@c509473bc1b4866415627af0e1c6cc8ac97fa51d',
   'jms/serializer' => '1.14.0@ee96d57024af9a7716d56fcbe3aa94b3d030f3ca',
-  'lmerotta/phpokeapi' => '1.1.4@5f6cc49daa37a51ec19d7ef5ea2c96f9de93a2a0',
+  'lmerotta/phpokeapi' => '1.1.5@1ecdd3d015a945999c79736104b08aefc2e8ca48',
   'ocramius/package-versions' => '1.4.0@a4d4b60d0e60da2487bd21a2c6ac089f85570dbb',
   'ocramius/proxy-manager' => '2.2.3@4d154742e31c35137d5374c998e8f86b54db2e2f',
   'phpcollection/phpcollection' => '0.5.0@f2bcff45c0da7c27991bbc1f90f47c4b7fb434a6',
@@ -44,7 +44,7 @@ final class Versions
   'symfony/yaml' => 'v4.3.3@34d29c2acd1ad65688f58452fd48a46bd996d5a6',
   'zendframework/zend-code' => '3.3.1@c21db169075c6ec4b342149f446e7b7b724f95eb',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
-  '__root__' => 'dev-master@62673a4898facaac37693e12d372bf3cc8cc3295',
+  '__root__' => 'dev-master@867100a3c2437a06a0eca1de53f8ecb3ad78fa46',
 );
 
     private function __construct()
